@@ -1,0 +1,23 @@
+<script lang="ts">
+import PersonService from "./app/person/PersonService";
+import PersonView from "./components/PersonView.svelte";
+
+
+	export let name: string;
+
+	let personService = new PersonService();
+</script>
+
+<main>
+	<h1>Hello {name}!</h1>
+	{#await personService.loadPerson()}
+	  Loading...
+	{:then person}
+	<PersonView person="{person}"></PersonView>
+	{/await}
+	
+</main>
+
+<style>
+
+</style>
