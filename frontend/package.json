@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "npm run generate && rollup -c -w",
+    "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "generate": "wait-on http://localhost:8080 && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o src/app/generated/api --global-property models"
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
