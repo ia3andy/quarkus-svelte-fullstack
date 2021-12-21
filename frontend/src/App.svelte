@@ -10,10 +10,12 @@ import PersonView from "./components/PersonView.svelte";
 
 <main>
 	<h1>Hello {name}!</h1>
-	{#await personService.loadPerson()}
+	{#await personService.loadPersons()}
 	  Loading...
-	{:then person}
+	{:then persons}
+	{#each persons as person}
 	<PersonView person="{person}"></PersonView>
+	{/each}
 	{/await}
 	
 </main>
