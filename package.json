@@ -13,8 +13,8 @@
     "frontend": "cd frontend && npm run dev",
     "clean-frontend": " cd ../frontend && rmdir /s /q \"src/app/generated/api\"",
 
-    
-    "generate": "npm run clean-frontend & wait-on http://localhost:8080 && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o src/app/generated/api --global-property models",
+
+    "generate": "npm run clean-frontend & wait-on http://localhost:8080 && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o frontend/src/app/generated/api --global-property models",
     "watch-api": "nodemon -e java --watch backend/src/main/java -x \"npm run check && npm run generate\"",
     "dev": "npm run clean-backend && npm run check && npm-run-all --parallel backend frontend watch-api"
   },
