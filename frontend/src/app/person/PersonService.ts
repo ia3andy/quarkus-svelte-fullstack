@@ -1,10 +1,15 @@
 import {Person} from "../generated/api/model/person";
+import RestClient from "../RestClient";
 
 export default class PersonService{
 
-    public async loadPersons():Promise<Person[]>{
-        let res = await fetch("http://localhost:8080/persons");
-        let person:Person[] = await res.json();
-        return person;
+    restClient:RestClient;
+
+    constructor(restClient:RestClient){
+        this.restClient = restClient;
+    }
+
+    async loadPersons():Promise<Person[]>{
+       return this.restClient.getList("/persons");
     }
 }

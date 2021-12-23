@@ -1,23 +1,24 @@
 <script lang="ts">
+import AppBackend from "./app/AppBackend";
+
 import PersonService from "./app/person/PersonService";
+import RestClient from "./app/RestClient";
+import Home from "./components/Home.svelte";
 import PersonView from "./components/PersonView.svelte";
 
 
 	export let name: string;
 
-	let personService = new PersonService();
+	let appPromise = AppBackend.create("http://localhost:8080");
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	{#await personService.loadPersons()}
-	  Loading...
-	{:then persons}
-	{#each persons as person}
-	<PersonView person="{person}"></PersonView>
-	{/each}
+	{#await appPromise}
+		Loading...
+	{:then app} 
+		<Home app="{app}"></Home>
 	{/await}
-	
 </main>
 
 <style>

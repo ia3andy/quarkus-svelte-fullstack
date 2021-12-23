@@ -6,17 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "check": "cd backend && mvn package",
+    "package": "cd backend && mvn package",
     "backend": "cd backend && mvn quarkus:dev",
-    "clean-backend": "cd backend && mvn clean",
+    "clean-package": "cd backend && mvn clean package",
 
     "frontend": "cd frontend && npm run dev",
     "clean-frontend": " cd ../frontend && rmdir /s /q \"src/app/generated/api\"",
 
 
     "generate": "npm run clean-frontend & wait-on http://localhost:8080 && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o frontend/src/app/generated/api --global-property models",
-    "watch-api": "nodemon -e java --watch backend/src/main/java -x \"npm run check && npm run generate\"",
-    "dev": "npm run clean-backend && npm run check && npm-run-all --parallel backend frontend watch-api"
+    "watch-api": "nodemon -e java --watch backend/src/main/java -x \"npm run package && npm run generate\"",
+    "dev": "npm-run-all --parallel backend frontend watch-api"
   },
   "author": "",
   "license": "ISC",
