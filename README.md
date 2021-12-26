@@ -1,10 +1,17 @@
 # Full Stack
+## Run
+Run Backend and Frontend in paralell:  
 `npm run dev`  
-Run Backend and Frontend in paralell.  
+
+## Setup  
+`npm i && cd frontend && npm i && cd ..`
+
 ---
-### Backend: Quarkus  
+### Backend  
 `cd backend`  
 `mvn quarkus:dev`  
-### Frontend: Svelte  
+[Quarkus Readme](https://gitlab.com/joofthan/templates/quarkus-minimal-pom/-/blob/master/README.md)
+### Frontend  
 `cd frontend`  
 `npm run dev`  
+[Svelte Readme](https://github.com/sveltejs/template/blob/master/README.md)
