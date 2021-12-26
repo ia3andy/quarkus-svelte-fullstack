@@ -1,10 +1,7 @@
 <script lang="ts">
 import AppBackend from "./app/AppBackend";
 
-import PersonService from "./app/person/PersonService";
-import RestClient from "./app/RestClient";
 import Home from "./components/Home.svelte";
-import PersonView from "./components/PersonView.svelte";
 
 
 	export let name: string;
