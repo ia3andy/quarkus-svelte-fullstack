@@ -5,16 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "package": "cd backend && mvn package",
     "backend": "cd backend && mvn quarkus:dev",
     "clean-package": "cd backend && mvn clean package",
-
     "frontend": "cd frontend && npm run dev",
     "clean-frontend": " cd ../frontend && rmdir /s /q \"src/app/generated/api\"",
-
-
-    "generate": "npm run clean-frontend & wait-on http://localhost:8080 && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o frontend/src/app/generated/api --global-property models",
+    "generate": "npm run clean-frontend & wait-on http://localhost:8080/q/openapi && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o frontend/src/app/generated/api --global-property models",
     "watch-api": "nodemon -e java --watch backend/src/main/java -x \"npm run package && npm run generate\"",
     "dev": "npm-run-all --parallel backend frontend watch-api"
   },
@@ -23,6 +19,7 @@
   "devDependencies": {
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
-    "wait-on": "^6.0.0"
+    "wait-on": "^6.0.0",
+    "@openapitools/openapi-generator-cli": "^2.4.23"
   }
 }
