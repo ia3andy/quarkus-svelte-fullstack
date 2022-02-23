@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "frontend-build": "rollup -c",
+    "frontend-dev": "rollup -c -w",
     "start": "sirv public --no-clear",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+
+    "backend-build": "cd ../backend && mvn package",
+    "clean-generated": "rmdir /s /q \"src/app/generated/api\"",
+    "generate": "npm run clean-generated & wait-on http://localhost:8080/q/openapi && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o src/app/generated/api --global-property models",
+    "watch-api": "nodemon -e java --watch ../backend/src/main/java -x \"npm run backend-build && npm run generate\"",
+    "dev": "npm-run-all --parallel frontend-dev watch-api"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -23,7 +29,11 @@
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0",
-    "wait-on": "^6.0.0"
+
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "wait-on": "^6.0.0",
+    "@openapitools/openapi-generator-cli": "^2.4.23"
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
