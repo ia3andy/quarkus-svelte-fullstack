@@ -1,17 +1,11 @@
 # Full Stack
-## Run
-Run Backend and Frontend in paralell:  
-`npm run dev`  
-
-## Setup  
-`npm i && cd frontend && npm i && cd ..`
-
+## Build Uber-Jar
+`mvn package`
 ---
-### Backend  
-`cd backend`  
+### Backend
 `mvn quarkus:dev`  
 [Quarkus Readme](https://gitlab.com/joofthan/templates/quarkus-minimal-pom/-/blob/master/README.md)
-### Frontend  
-`cd frontend`  
+### Frontend
+`cd src/main/javascript`  
 `npm run dev`  
 [Svelte Readme](https://github.com/sveltejs/template/blob/master/README.md)
