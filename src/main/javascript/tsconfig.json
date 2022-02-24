@@ -1,7 +1,9 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
 
-  "include": ["src/**/*"],
+  "include": [
+    "svelte/**/*"
+  ],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
   "compilerOptions": {
     "importsNotUsedAsValues": "remove"

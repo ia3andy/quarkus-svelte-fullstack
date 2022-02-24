@@ -1,3 +1,4 @@
+// @ts-ignore
 import {Person} from "../generated/api/model/person";
 import RestClient from "../RestClient";
 
