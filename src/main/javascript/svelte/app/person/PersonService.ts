@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Person} from "../generated/api/model/person";
+import {Person} from "../../generated/api/model/person";
 import RestClient from "../RestClient";
 
 export default class PersonService{

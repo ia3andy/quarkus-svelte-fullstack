@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { Person } from "../app/generated/api/model/person";
+import type { Person } from "../generated/api/model/person";
 
     export let person:Person;
 </script>

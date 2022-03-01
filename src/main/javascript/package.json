@@ -8,10 +8,9 @@
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
 
-    "backend-build": "cd ../backend && mvn package",
-    "clean-generated": "rmdir /s /q \"svelte/app/generated/api\"",
-    "generate": "npm run clean-generated & wait-on http://localhost:8080/q/openapi && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o svelte/app/generated/api --global-property models",
-    "watch-api": "nodemon -e java --watch ../backend/src/main/java -x \"npm run backend-build && npm run generate\"",
+    "clean-generated": "rmdir /s /q \"svelte/generated/api\"",
+    "generate": "npm run clean-generated & wait-on http://localhost:8080/q/openapi && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o svelte/generated/api --global-property models",
+    "watch-api": "nodemon -e java --watch ../src/main/java -x \"npm run backend-build && npm run generate\"",
     "dev": "npm-run-all --parallel frontend-dev watch-api"
   },
   "devDependencies": {
