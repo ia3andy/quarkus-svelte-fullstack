@@ -5,7 +5,7 @@
   "scripts": {
     "frontend-build": "rollup -c",
     "frontend-dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
+    "start": "sirv public --no-clear --port 8081",
     "check": "svelte-check --tsconfig ./tsconfig.json",
 
     "clean-generated": "rmdir /s /q \"svelte/generated/api\"",
