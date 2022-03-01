@@ -1,4 +1,4 @@
-import PersonService from "./person/PersonService";
+import PersonService from "../person/PersonService";
 import RestClient from "./RestClient";
 
 export default class AppBackend{

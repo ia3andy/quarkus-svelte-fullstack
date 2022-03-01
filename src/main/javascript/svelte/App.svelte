@@ -1,7 +1,7 @@
 <script lang="ts">
-import AppBackend from "./app/AppBackend";
+import AppBackend from "./home/AppBackend";
 
-import Home from "./components/Home.svelte";
+import Home from "./home/Home.svelte";
 
 
 	export let name: string;

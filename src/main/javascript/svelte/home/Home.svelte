@@ -1,8 +1,8 @@
 <script lang="ts">
 import App from "../App.svelte";
-import AppBackend from "../app/AppBackend";
+import AppBackend from "./AppBackend";
 
-    import PersonView from "./PersonView.svelte";
+    import PersonView from "../person/PersonView.svelte";
     
         export let app:AppBackend;
     </script>
