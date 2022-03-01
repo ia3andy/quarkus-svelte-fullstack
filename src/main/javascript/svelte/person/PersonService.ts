@@ -1,6 +1,6 @@
 // @ts-ignore
 import {Person} from "../generated/api/model/person";
-import RestClient from "../home/RestClient";
+import {RestClient} from "../home/apputil.js";
 
 export default class PersonService{
 
@@ -11,6 +11,6 @@ export default class PersonService{
     }
 
     async loadPersons():Promise<Person[]>{
-       return this.restClient.getList("/persons");
+       return this.restClient.get("/persons");
     }
 }

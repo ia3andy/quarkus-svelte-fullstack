@@ -1,5 +1,5 @@
 import PersonService from "../person/PersonService";
-import RestClient from "./RestClient";
+import {RestClient} from "./apputil";
 
 export default class AppBackend{
     personService: PersonService;
