@@ -5,13 +5,14 @@
   "scripts": {
     "frontend-build": "rollup -c",
     "frontend-dev": "rollup -c -w",
-    "start": "sirv public --no-clear --port 8081",
+    "start": "sirv public --no-clear --port 8888",
     "check": "svelte-check --tsconfig ./tsconfig.json",
 
     "clean-generated": "rmdir /s /q \"svelte/generated/api\"",
-    "generate": "npm run clean-generated & wait-on http://localhost:8080/q/openapi && openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i http://localhost:8080/q/openapi -o svelte/generated/api --global-property models",
+    "generate": "openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i svelte/generated/api/openapi.yaml -o svelte/generated/api --global-property models",
     "watch-api": "nodemon -e java --watch ../src/main/java -x \"npm run generate\"",
-    "dev": "npm-run-all --parallel frontend-dev watch-api"
+    "dev": "npm-run-all --parallel frontend-dev watch-api",
+    "generate-and-build": "npm run generate && npm run frontend-build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

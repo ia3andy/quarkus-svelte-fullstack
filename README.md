@@ -5,10 +5,10 @@
 ## Dev Mode
 ### Backend
 http://localhost:8080  
-`mvn quarkus:dev`  
+`mvn package quarkus:dev`  
 [Quarkus Readme](https://gitlab.com/joofthan/templates/quarkus-minimal-pom/-/blob/master/README.md)
 ### Frontend
-http://localhost:8081  
+http://localhost:8888  
 `cd src/main/javascript`  
 `npm run dev`  
 [Svelte Readme](https://github.com/sveltejs/template/blob/master/README.md)

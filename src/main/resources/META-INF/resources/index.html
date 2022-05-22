@@ -56,8 +56,13 @@
         code {
             font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
             font-size: 87.5%;
-            color: #e83e8c;
+            color: cornflowerblue;
             word-break: break-word;
+        }
+
+        code.run{
+            color: red;
+            font-weight: bold;
         }
 
         .left-column {
@@ -123,7 +128,7 @@
 
         <h2>What are your next steps?</h2>
 
-        <p>If not already done, run the application in <em>dev mode</em> using: <code>./mvnw compile quarkus:dev</code>.
+        <p>If not already done, run the application in <em>dev mode</em> using: <code class="run">mvn package quarkus:dev</code>.
         </p>
         <ul>
             <li>Your static assets are located in <code>src/main/resources/META-INF/resources</code>.</li>
@@ -140,15 +145,6 @@
 
     </div>
     <div class="right-column">
-        <div class="right-section">
-            <h3>Application</h3>
-            <ul>
-                <li>GroupId: <code>org.acme</code></li>
-                <li>ArtifactId: <code>code-with-quarkus</code></li>
-                <li>Version: <code>1.0.0-SNAPSHOT</code></li>
-                <li>Quarkus Version: <code>2.5.4.Final</code></li>
-            </ul>
-        </div>
         <div class="right-section">
             <h3>Do you like Quarkus?</h3>
             <ul>

@@ -8,7 +8,7 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
-    <quarkus.version>2.7.2.Final</quarkus.version>
+    <quarkus.version>2.9.1.Final</quarkus.version>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <surefire-failsafe.version>3.0.0-M5</surefire-failsafe.version>
@@ -72,39 +72,29 @@
         <configuration>
           <workingDirectory>src/main/javascript/</workingDirectory>
           <installDirectory>target/nodejs</installDirectory>
+          <nodeVersion>v16.13.1</nodeVersion>
+          <npmVersion>8.1.2</npmVersion>
         </configuration>
         <executions>
-          <!-- It will install nodejs and npm -->
-          <execution>
-            <id>install node and npm</id>
-            <goals>
-              <goal>install-node-and-npm</goal>
-            </goals>
-            <configuration>
-              <nodeVersion>v16.13.1</nodeVersion>
-              <npmVersion>8.1.2</npmVersion>
-            </configuration>
-          </execution>
-          <!-- It will execute command "npm install" inside "/src/main/javascript"
-              directory -->
+
           <execution>
             <id>npm install</id>
+            <phase>initialize</phase>
             <goals>
-              <goal>npm</goal>
+              <goal>install-node-and-npm</goal><!-- "install node"  -->
+              <goal>npm</goal><!-- "npm install" inside "/src/main/javascript"  -->
             </goals>
-            <configuration>
-              <arguments>install</arguments>
-            </configuration>
           </execution>
-          <!-- It will execute command "npm build" inside "/src/main/javascript"
-              directory to clean and create "/dist" directory -->
+          <!-- It will execute command "npm run generate-and-build" inside "/src/main/javascript"
+          directory to generate openapi typescript interfaces and to create "/dist" directory -->
           <execution>
             <id>npm build</id>
+            <phase>prepare-package</phase>
             <goals>
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>run frontend-build</arguments>
+              <arguments>run generate-and-build</arguments>
             </configuration>
           </execution>
         </executions>
