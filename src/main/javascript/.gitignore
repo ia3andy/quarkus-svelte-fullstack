@@ -1,4 +1,4 @@
 /node_modules/
 /public/build/
-
+/svelte/generated/
 .DS_Store
