@@ -2,7 +2,6 @@
 /.vscode/
 .DS_Store
 .idea
-database.mv.db
 src/.DS_Store
 src/main/.DS_Store
 /target/
