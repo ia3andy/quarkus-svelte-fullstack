@@ -72,8 +72,8 @@
         <configuration>
           <workingDirectory>src/main/javascript/</workingDirectory>
           <installDirectory>target/nodejs</installDirectory>
-          <nodeVersion>v16.13.1</nodeVersion>
-          <npmVersion>8.1.2</npmVersion>
+          <nodeVersion>v16.15.0</nodeVersion>
+          <npmVersion>8.5.5</npmVersion>
         </configuration>
         <executions>
 
