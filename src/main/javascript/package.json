@@ -9,8 +9,8 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
 
     "clean-generated": "rmdir /s /q \"svelte/generated/api\"",
-    "generate": "openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i svelte/generated/openapi.yaml -o svelte/generated/api --global-property models",
-    "watch-api": "nodemon -e java --watch ../src/main/java -x \"npm run generate\"",
+    "generate": "openapi-generator-cli generate --generator-key v3.0 --skip-validate-spec -g typescript-angular -i svelte/generated/openapi/openapi.yaml -o svelte/generated/ts --global-property models",
+    "watch-api": "nodemon -e yaml --watch svelte/generated/openapi -x \"npm run generate\"",
     "dev": "npm-run-all --parallel frontend-dev watch-api",
     "generate-and-build": "npm run generate && npm run frontend-build"
   },

@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Person} from "../generated/api/model/person";
+import {Person} from "../generated/ts/model/person";
 import {RestClient} from "../home/apputil.js";
 
 export default class PersonService{
