@@ -16,6 +16,10 @@ import Home from "./home/Home.svelte";
 	{:then app} 
 		<Home app="{app}"></Home>
 	{/await}
+	<br>
+	<a href="http://localhost:8080/q/dev">Dev UI</a><br>
+	<a href="http://localhost:8080/q/swagger-ui">Swagger Ui</a><br>
+	<a href="http://localhost:8080/h2">H2 Console</a> (jdbc:h2:file:./target/database)<br>
 </main>
 
 <style>
