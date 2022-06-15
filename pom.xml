@@ -28,6 +28,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>io.quarkiverse.quinoa</groupId>
+      <artifactId>quarkus-quinoa</artifactId>
+      <version>1.0.6</version>
+    </dependency>
+    <dependency>
       <groupId>io.quarkus</groupId>
         <artifactId>quarkus-hibernate-orm-panache</artifactId>
     </dependency>

@@ -23,5 +23,7 @@ import Home from "./home/Home.svelte";
 </main>
 
 <style>
-
+main {
+    font-size: 20px;
+}
 </style>
